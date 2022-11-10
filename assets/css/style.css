@@ -1,0 +1,504 @@
+@import url("https://fonts.googleapis.com/css2?family=Andika+New+Basic:ital,wght@0,400;0,700;1,400;1,700&family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,600;1,900&display=swap");
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+}
+
+body, html {
+  overflow-x: hidden;
+  background-color: #f1faee;
+  scroll-behavior: smooth;
+}
+
+.header-page {
+  background-color: #e63946;
+  color: #f1faee;
+  padding: 0 1em;
+  height: 8vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 99999;
+}
+.header-page h1 {
+  font-weight: 800;
+  font-size: 1.5em;
+}
+.header-page .menu-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  position: absolute;
+  top: 8vh;
+  right: 0;
+  background-color: #1d3557;
+  width: 100vw;
+  height: 91vh;
+  letter-spacing: 3px;
+  transform: translateX(100%);
+  transition: transform 0.5s ease-in;
+}
+.header-page .menu-list a {
+  color: inherit;
+  text-decoration: none;
+  opacity: 0;
+  position: relative;
+  outline: none;
+}
+.header-page .menu-list a:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 100%;
+  height: 1px;
+  background-color: white;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: 0.3s transform ease-in;
+}
+.header-page .menu-list a:hover:after {
+  transform: scale(1);
+  transform-origin: left;
+}
+.header-page .menu-list a:focus:after {
+  transform: scale(1);
+  transform-origin: left;
+}
+.header-page .menu-list.active {
+  transform: translateX(0);
+}
+.header-page .button-menu {
+  cursor: pointer;
+}
+.header-page .button-menu i {
+  font-size: 2.5em;
+}
+
+.about-me {
+  min-height: 100vh;
+  padding: 4em 2em;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2em;
+}
+.about-me .me-text {
+  height: 50%;
+}
+.about-me .me-text h1 {
+  font-weight: 900;
+  font-style: italic;
+  margin: 0 0 0.3em 0.1em;
+  font-size: 2.5em;
+  color: #e63946;
+}
+.about-me .me-text p {
+  text-align: right;
+  padding: 0 0.5em;
+}
+.about-me .me-picture {
+  width: 16em;
+  height: 16em;
+  margin-bottom: 2em;
+}
+.about-me .me-picture img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.knowledge-section {
+  min-height: 100vh;
+  padding: 4em 2em;
+  background-color: #1d3557;
+  color: #f1faee;
+  text-align: center;
+  display: flex;
+  flex-flow: column nowrap;
+  margin: auto;
+  font-size: 1.1em;
+  position: relative;
+}
+.knowledge-section .waves {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+}
+.knowledge-section .waves svg {
+  width: 180%;
+}
+.knowledge-section .intro-knowledge {
+  margin-bottom: 2.2em;
+  z-index: 1;
+  padding: 1em;
+}
+.knowledge-section .intro-knowledge h1 {
+  font-size: 2.2em;
+  margin-bottom: 0.3em;
+  font-weight: 900;
+}
+.knowledge-section .list-programming, .knowledge-section .list-hacking, .knowledge-section .list-infra {
+  list-style-position: inside;
+  list-style-type: decimal;
+}
+.knowledge-section .list-programming h1, .knowledge-section .list-hacking h1, .knowledge-section .list-infra h1 {
+  color: #457b9d;
+  font-size: 2em;
+  font-family: "Andika New Basic", sans-serif;
+}
+.knowledge-section .list-programming li, .knowledge-section .list-hacking li, .knowledge-section .list-infra li {
+  margin: 0.2em 0;
+  font-family: "Andika New Basic", sans-serif;
+}
+.knowledge-section .list-hacking {
+  z-index: 1;
+}
+.knowledge-section .list-hacking h1 {
+  color: #a8dadc;
+}
+
+.my-write-ups {
+  min-height: 100vh;
+  padding: 4em 2em;
+  background-color: #f1faee;
+  color: #0a0908;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+.my-write-ups .intro-write-ups {
+  min-height: 10vh;
+  height: auto;
+  text-align: center;
+  padding: 1em;
+}
+.my-write-ups .intro-write-ups h1 {
+  font-size: 2.2em;
+  margin-bottom: 0.3em;
+  font-weight: 900;
+  color: #e63946;
+}
+.my-write-ups .write-ups-list {
+  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.my-write-ups .write-ups-list .write-up-div {
+  padding: 1em 0.5em;
+  text-align: center;
+}
+.my-write-ups .write-ups-list .write-up-div h2 {
+  text-align: center;
+  color: #e63946;
+}
+.my-write-ups .write-ups-list .write-up-div img {
+  display: block;
+  height: 5em;
+  margin: 0.8em auto;
+}
+.my-write-ups .write-ups-list .write-up-div p {
+  font-family: "Andika New Basic", sans-serif;
+}
+.my-write-ups .write-ups-list .write-up-div p a {
+  color: inherit;
+}
+.my-write-ups .my-skills {
+  min-height: 10vh;
+  height: auto;
+  text-align: center;
+  padding: 1em;
+}
+.my-write-ups .my-skills h2 {
+  font-family: "Andika New Basic", sans-serif;
+}
+.my-write-ups .my-skills .skills-icons {
+  margin: 1em auto 0;
+  min-height: 8vh;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-gap: 1em;
+}
+.my-write-ups .my-skills .skills-icons i {
+  font-size: 2em;
+}
+
+.contact-section {
+  min-height: 100vh;
+  padding: 4em 2em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #1d3557;
+  color: #f1faee;
+}
+.contact-section .intro-contact {
+  min-height: 10vh;
+  padding: 1em;
+  text-align: center;
+}
+.contact-section .intro-contact h1 {
+  font-size: 2.2em;
+  margin-bottom: 0.3em;
+  font-weight: 900;
+}
+.contact-section .intro-contact .social-medias {
+  margin-top: 0.5em;
+  font-size: 1.5em;
+}
+.contact-section .intro-contact .social-medias a {
+  color: inherit;
+  transition: ease-out 0.2s color;
+  outline: none;
+}
+.contact-section .intro-contact .social-medias a i {
+  margin: 0 0.3em;
+}
+.contact-section .intro-contact .social-medias a:hover {
+  color: #e63946;
+}
+.contact-section .intro-contact .social-medias a:focus {
+  color: #e63946;
+}
+.contact-section .contact-me {
+  min-height: 45vh;
+  width: 100%;
+}
+.contact-section .contact-me form {
+  display: flex;
+  flex-direction: column;
+}
+.contact-section .contact-me form label {
+  font-weight: 800;
+}
+.contact-section .contact-me form #input-email, .contact-section .contact-me form #input-name, .contact-section .contact-me form #button-input {
+  margin: 0.5em 0;
+  border: none;
+  padding: 1em;
+  min-height: 3.5em;
+  width: 100%;
+  transition: 0.2s ease-in;
+  outline: none;
+}
+.contact-section .contact-me form #input-email::-moz-placeholder, .contact-section .contact-me form #input-name::-moz-placeholder, .contact-section .contact-me form #button-input::-moz-placeholder {
+  font-family: "Andika New Basic", sans-serif;
+}
+.contact-section .contact-me form #input-email:-ms-input-placeholder, .contact-section .contact-me form #input-name:-ms-input-placeholder, .contact-section .contact-me form #button-input:-ms-input-placeholder {
+  font-family: "Andika New Basic", sans-serif;
+}
+.contact-section .contact-me form #input-email::placeholder, .contact-section .contact-me form #input-name::placeholder, .contact-section .contact-me form #button-input::placeholder {
+  font-family: "Andika New Basic", sans-serif;
+}
+.contact-section .contact-me form #input-message {
+  resize: none;
+  min-height: 10em;
+  margin: 0.5em 0;
+  border: none;
+  padding: 1em;
+  width: 100%;
+}
+.contact-section .contact-me form #input-message::-moz-placeholder {
+  font-family: "Andika New Basic", sans-serif;
+}
+.contact-section .contact-me form #input-message:-ms-input-placeholder {
+  font-family: "Andika New Basic", sans-serif;
+}
+.contact-section .contact-me form #input-message::placeholder {
+  font-family: "Andika New Basic", sans-serif;
+}
+.contact-section .contact-me form #button-input:hover {
+  background-color: #457b9d;
+  color: #f1faee;
+}
+.contact-section .contact-me form #button-input:focus {
+  color: #f1faee;
+  background-color: #457b9d;
+}
+
+footer {
+  background-color: #e63946;
+  color: #f1faee;
+  padding: 1em;
+  text-align: center;
+}
+
+@-webkit-keyframes slideLinks {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideLinks {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@media (min-width: 700px) {
+  .header-page .menu-list {
+    position: static;
+    flex-direction: row;
+    height: unset;
+    width: unset;
+    background-color: unset;
+    transform: unset;
+  }
+  .header-page .menu-list a {
+    margin: 0 0.8em;
+    opacity: 1;
+  }
+  .header-page .button-menu {
+    display: none;
+  }
+  .about-me {
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 0;
+  }
+  .about-me .me-text {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+  }
+  .about-me .me-text h1 {
+    font-size: 3.5em;
+  }
+  .about-me .me-text p {
+    font-size: 1.2em;
+  }
+  .knowledge-section {
+    font-size: 1.3em;
+  }
+  .knowledge-section .waves svg {
+    width: 150%;
+  }
+  .knowledge-section .intro-knowledge {
+    margin-top: 1em;
+    font-size: 1.1em;
+  }
+  .knowledge-section .intro-knowledge h1 {
+    font-size: 2.3em;
+  }
+  .knowledge-section .my-lists {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 2em;
+    margin: auto 0;
+  }
+  .knowledge-section .my-lists .list-programming h1, .knowledge-section .my-lists .list-hacking h1, .knowledge-section .my-lists .list-infra h1 {
+    font-size: 2.2em;
+  }
+  .knowledge-section .my-lists .list-programming li, .knowledge-section .my-lists .list-hacking li, .knowledge-section .my-lists .list-infra li {
+    margin: 0.3em 0;
+  }
+  .fav-games {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .fav-games .intro-games {
+    min-height: 20vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .fav-games .intro-games h1 {
+    font-size: 3em;
+  }
+  .fav-games .intro-games p {
+    font-size: 1.3em;
+  }
+  .fav-games .cards-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 80vh;
+  }
+  .fav-games .cards-container .game-card {
+    margin: 0 2%;
+    width: 30%;
+    height: 50vh;
+  }
+  .fav-games .cards-container .game-card img {
+    margin: 1em 0;
+  }
+  .fav-games .cards-container .game-card h2 {
+    font-size: 1.7em;
+  }
+  .fav-games .cards-container .game-card p {
+    font-size: 1.2em;
+  }
+  .my-write-ups {
+    padding-bottom: 1em;
+  }
+  .my-write-ups .intro-write-ups h1 {
+    font-size: 3em;
+  }
+  .my-write-ups .intro-write-ups p {
+    font-size: 1.3em;
+  }
+  .my-write-ups .write-ups-list {
+    font-size: 1.1em;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    grid-gap: 2em;
+    margin-bottom: 1.5em;
+  }
+  .my-write-ups .write-ups-list .write-up-div {
+    height: 40vh;
+  }
+  .my-write-ups .write-ups-list .write-up-div h2 {
+    font-size: 2.2em;
+  }
+  .contact-section {
+    flex-direction: row;
+    padding-bottom: 0;
+  }
+  .contact-section .intro-contact {
+    width: 40vw;
+    min-height: 100%;
+  }
+  .contact-section .intro-contact h1 {
+    font-size: 3em;
+  }
+  .contact-section .intro-contact p {
+    font-size: 1.3em;
+  }
+  .contact-section .contact-me {
+    width: 40vw;
+    min-height: 100%;
+  }
+  .contact-section .contact-me #button-input {
+    cursor: pointer;
+  }
+}/*# sourceMappingURL=style.css.map */
